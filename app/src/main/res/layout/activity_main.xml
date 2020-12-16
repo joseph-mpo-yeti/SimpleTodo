@@ -7,12 +7,56 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/defaultMessage"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Yaay ! You have no pending Todos"
+    />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/todosRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/addBtn"
+        android:layout_below="@+id/toolbar"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/addBtn"
+        android:onClick="startAddActivity"
+        android:layout_alignParentBottom="true"
+        android:background="@color/teal_700"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="New Todo"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_alignParentTop="true"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:minHeight="56dp"
+        app:title="Todos"
+        android:theme="?attr/actionBarTheme" />
+
 
 </RelativeLayout>
