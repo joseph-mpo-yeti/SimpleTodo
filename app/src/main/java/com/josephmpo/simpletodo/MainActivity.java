@@ -94,8 +94,8 @@ public class MainActivity extends AppCompatActivity
                 false
         ));
         updateMessageVisibility();
-        adapter.notifyItemInserted(todos.size()-1);
         saveItems();
+        adapter.notifyItemInserted(todos.size()-1);
         Toast.makeText(getApplicationContext(), extras.getString("title") + " added", Toast.LENGTH_SHORT).show();
     }
 
@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity
                 extras.getBoolean("completed")
         );
         todos.set(extras.getInt("position"), item);
-        adapter.notifyItemChanged(extras.getInt("position"));
         saveItems();
+        adapter.notifyItemChanged(extras.getInt("position"));
         Toast.makeText(getApplicationContext(), "Todo updated", Toast.LENGTH_SHORT).show();
     }
 
@@ -125,8 +125,8 @@ public class MainActivity extends AppCompatActivity
     public void onItemLongClickedListener(int position) {
         String title = todos.get(position).title;
         todos.remove(position);
-        adapter.notifyItemRemoved(position);
         saveItems();
+        adapter.notifyItemRemoved(position);
         Toast.makeText(getApplicationContext(), title + " deleted", Toast.LENGTH_SHORT).show();
         updateMessageVisibility();
     }

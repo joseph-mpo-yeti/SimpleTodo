@@ -75,10 +75,6 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
         public void bind(Todo item) {
             title.setText(item.title);
             completed.setText(item.completed ? "Done" : "Pending");
-
-            if(item.completed){
-                title.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-            }
         }
     }
 }
